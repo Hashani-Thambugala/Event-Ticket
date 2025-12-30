@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventFlow | Premium Event Tickets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-ticket-alt"></i>
+                <span>EventFlow</span>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#coming-soon">Coming Soon</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="#" class="btn btn-secondary btn-small">Sign In</a>
+                <a href="#events" class="btn btn-primary btn-small">Browse Events</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Experience Live Events Like Never Before</h1>
+                <p>Discover and book tickets for the hottest concerts, festivals, sports events, and conferences worldwide. Secure your spot with just a few clicks!</p>
+                <a href="#events" class="btn btn-primary">Explore Events</a>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Events Listed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>120K+</h3>
+                        <p>Tickets Sold</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>Customer Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://plus.unsplash.com/premium_photo-1708589337428-fa10197b5016?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Concert event">
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+                <p>Find the perfect event for you. From music concerts to tech conferences, we've got something for everyone.</p>
+            </div>
+            
+            <div class="event-filters">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="music">Music</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="conference">Conference</button>
+                <button class="filter-btn" data-filter="festival">Festival</button>
+            </div>
+            
+            <div class="events-grid">
+                <!-- Event 1 - Updated with overlay -->
+                <div class="event-card" data-category="music">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Music Festival" class="event-img">
+                        <span class="event-category music">Music</span>
+                        
+                        
+                    </div>
+                    
+                    <!-- Detailed info that appears on hover -->
+                    <div class="event-content">
+                        <span class="event-date">June 15, 2025</span>
+                        <h3 class="event-title">Summer Music Festival 2025</h3>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Central Park, New York</span>
+                        </div>
+                        <div class="event-price">$89 - $249</div>
+                        <div class="event-actions">
+                            <div class="ticket-count">
+                                <button class="count-btn minus">-</button>
+                                <span class="ticket-quantity">1</span>
+                                <button class="count-btn plus">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 - Updated with overlay -->
+                <div class="event-card" data-category="sports">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Basketball Game" class="event-img">
+                        <span class="event-category sports">Sports</span>
+                        
+                        
+                    </div>
+                    
+                    <!-- Detailed info that appears on hover -->
+                    <div class="event-content">
+                        <span class="event-date">July 22, 2025</span>
+                        <h3 class="event-title">NBA Finals 2025</h3>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Staples Center, Los Angeles</span>
+                        </div>
+                        <div class="event-price">$150 - $500</div>
+                        <div class="event-actions">
+                            <div class="ticket-count">
+                                <button class="count-btn minus">-</button>
+                                <span class="ticket-quantity">1</span>
+                                <button class="count-btn plus">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 - Updated with overlay -->
+                <div class="event-card" data-category="conference">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tech Conference" class="event-img">
+                        <span class="event-category conference">Conference</span>
+                        
+                       
+                    </div>
+                    
+                    <!-- Detailed info that appears on hover -->
+                    <div class="event-content">
+                        <span class="event-date">August 10, 2025</span>
+                        <h3 class="event-title">Tech Innovators Conference</h3>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Convention Center, San Francisco</span>
+                        </div>
+                        <div class="event-price">$299 - $799</div>
+                        <div class="event-actions">
+                            <div class="ticket-count">
+                                <button class="count-btn minus">-</button>
+                                <span class="ticket-quantity">1</span>
+                                <button class="count-btn plus">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 4 - Updated with overlay -->
+                <div class="event-card" data-category="festival">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Food Festival" class="event-img">
+                        <span class="event-category festival">Festival</span>
+                        
+                        
+                    </div>
+                    
+                    <!-- Detailed info that appears on hover -->
+                    <div class="event-content">
+                        <span class="event-date">April 5, 2025</span>
+                        <h3 class="event-title">International Food Festival</h3>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Grant Park, Chicago</span>
+                        </div>
+                        <div class="event-price">$25 - $75</div>
+                        <div class="event-actions">
+                            <div class="ticket-count">
+                                <button class="count-btn minus">-</button>
+                                <span class="ticket-quantity">1</span>
+                                <button class="count-btn plus">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5 - Updated with overlay -->
+                <div class="event-card" data-category="music">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="DJ Night" class="event-img">
+                        <span class="event-category music">Music</span>
+                        
+                       
+                    </div>
+                    
+                    <!-- Detailed info that appears on hover -->
+                    <div class="event-content">
+                        <span class="event-date">October 12, 2025</span>
+                        <h3 class="event-title">Mega DJ Night Party</h3>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Downtown Club, Miami</span>
+                        </div>
+                        <div class="event-price">$45 - $120</div>
+                        <div class="event-actions">
+                            <div class="ticket-count">
+                                <button class="count-btn minus">-</button>
+                                <span class="ticket-quantity">1</span>
+                                <button class="count-btn plus">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+                <!-- Event 6 - Updated with overlay -->
+                <div class="event-card" data-category="festival">
+                    <div class="event-img-container">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Light Festival" class="event-img">
+                        <span class="event-category festival">Festival</span>
+                        
+                        
+                    </div>
+                    
+                    <!-- Detailed info that appears on hover -->
+                    <div class="event-content">
+                        <span class="event-date">December 10, 2025</span>
+                        <h3 class="event-title">Winter Light Festival</h3>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>City Park, Denver</span>
+                        </div>
+                        <div class="event-price">$15 - $40</div>
+                        <div class="event-actions">
+                            <div class="ticket-count">
+                                <button class="count-btn minus">-</button>
+                                <span class="ticket-quantity">1</span>
+                                <button class="count-btn plus">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                
+                
+            
+            <div style="text-align: center;">
+                <a href="#" class="btn btn-secondary">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Event -->
+    <section class="featured-event" id="featured">
+        <div class="container featured-content">
+            <div class="featured-text">
+                <h2>Featured Event: Global Music Festival</h2>
+                <p>Join us for the biggest music festival of the year featuring over 50 artists across 5 stages. This 3-day extravaganza will showcase the best in pop, rock, electronic, and hip-hop music.</p>
+                <p><i class="fas fa-calendar-alt"></i> August 25-27, 2025</p>
+                <p><i class="fas fa-map-marker-alt"></i> Miami Beach, Florida</p>
+                <p><i class="fas fa-users"></i> Expected attendance: 50,000+</p>
+                <a href="#" class="btn btn-primary">Get Your Tickets Now</a>
+            </div>
+            <div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Featured Event">
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon" id="coming-soon">
+        <div class="container">
+            <div class="section-title">
+                <h2>Coming Soon Events</h2>
+                <p>Get ready for these amazing events! Be the first to know when tickets go on sale.</p>
+            </div>
+            
+            <div class="coming-soon-grid">
+                <div class="coming-soon-card">
+                    <div class="coming-soon-date">
+                        <span class="month">DEC</span>
+                        <span class="day">31</span>
+                    </div>
+                    <div class="coming-soon-content">
+                        <h3>New Year's Eve Party 2025</h3>
+                        <p>The biggest New Year celebration with fireworks, live music, and amazing performances.</p>
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-number">45</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number">12</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary btn-small notify-btn">Notify Me</button>
+                    </div>
+                </div>
+                
+                <div class="coming-soon-card">
+                    <div class="coming-soon-date">
+                        <span class="month">JAN</span>
+                        <span class="day">15</span>
+                    </div>
+                    <div class="coming-soon-content">
+                        <h3>Winter EDM Festival</h3>
+                        <p>Experience the hottest electronic dance music festival with world-class DJs.</p>
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-number">60</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number">08</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary btn-small notify-btn">Notify Me</button>
+                    </div>
+                </div>
+                
+                <div class="coming-soon-card">
+                    <div class="coming-soon-date">
+                        <span class="month">FEB</span>
+                        <span class="day">4</span>
+                    </div>
+                    <div class="coming-soon-content">
+                        <h3>Independent Day</h3>
+                        <p>Commemorates the granting of Dominion status (Dominion of Ceylon) from the UK in 1948, with full republic status achieved in 1972.</p>
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-number">90</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number">06</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary btn-small notify-btn">Notify Me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Getting tickets to your favorite events has never been easier with our simple 3-step process.</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Discover Events</h3>
+                    <p>Browse through hundreds of events by category, date, or location to find exactly what you're looking for.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Select Tickets</h3>
+                    <p>Choose your preferred seats and number of tickets. View prices and availability in real-time.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Secure Checkout</h3>
+                    <p>Complete your purchase with our secure payment system. Receive e-tickets instantly via email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>EventFlow</h3>
+                    <p>Your premier destination for discovering and purchasing event tickets worldwide. Experience events like never before.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#featured">Featured Events</a></li>
+                        <li><a href="#coming-soon">Coming Soon</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Event Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Concerts</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Festivals</a></li>
+                        <li><a href="#">Conferences</a></li>
+                        <li><a href="#">Theater</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on upcoming events and exclusive offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventFlow. All rights reserved. | <a href="#" style="color: #b0b7c3;">Privacy Policy</a> | <a href="#" style="color: #b0b7c3;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Event Filtering
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const eventCards = document.querySelectorAll('.event-card');
+                
+                eventCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Ticket Count Functionality
+        document.querySelectorAll('.count-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const parent = this.closest('.ticket-count');
+                const quantitySpan = parent.querySelector('.ticket-quantity');
+                let quantity = parseInt(quantitySpan.textContent);
+                
+                if (this.classList.contains('plus')) {
+                    quantity++;
+                } else if (this.classList.contains('minus') && quantity > 1) {
+                    quantity--;
+                }
+                
+                quantitySpan.textContent = quantity;
+            });
+        });
+
+        // Buy Tickets Button Alert
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            if (button.textContent.includes('Buy Tickets')) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const card = this.closest('.event-card');
+                    const title = card.querySelector('.event-title').textContent;
+                    const price = card.querySelector('.event-price').textContent;
+                    const quantity = card.querySelector('.ticket-quantity').textContent;
+                    
+                    alert(`Added to cart: ${quantity} ticket(s) for "${title}" at ${price} each`);
+                });
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu if open
+                        document.querySelector('nav').classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
