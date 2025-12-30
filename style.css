@@ -298,7 +298,7 @@ nav a:hover::after {
     border-color: var(--primary);
 }
 
-/* Updated Events Grid - 4 cards per row */
+
 /* Enhanced Event Cards Design */
 .events-grid {
     display: grid;
@@ -814,7 +814,7 @@ nav a:hover::after {
         font-size: 1.3rem;
     }
 }
-/* Improved Coming Soon Section */
+/*  Coming Soon Section */
 .coming-soon {
     padding: 100px 0;
     background: linear-gradient(135deg, #0f0f10 0%, #1a1a1d 100%);
@@ -980,7 +980,7 @@ nav a:hover::after {
 
 .notify-btn {
     width: 100%;
-    margin-top: auto; /* Pushes button to bottom */
+    margin-top: auto; 
 }
 
 /* Featured Event Section - Compact & Attractive */
@@ -1480,3 +1480,70 @@ footer {
 .countdown-item:nth-child(2) { animation-delay: 0.5s; }
 .countdown-item:nth-child(3) { animation-delay: 1s; }
 .countdown-item:nth-child(4) { animation-delay: 1.5s; }
+
+/* logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.logo-img {
+    height:70px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: var(--transition);
+    padding: 4px;
+}
+
+.logo:hover .logo-img {
+    transform: rotate(-5deg) scale(1.05);
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.logo:hover .logo-text {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 38px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 32px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+}
