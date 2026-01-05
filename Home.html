@@ -9,15 +9,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here dynamically -->
+            <div class="cart-empty" id="emptyCart">
+                <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                <p>Your cart is empty</p>
+                <p>Add some events to get started!</p>
+            </div>
+        </div>
+        
+        <div class="cart-total" id="cartTotal" style="display: none;">
+            <div class="cart-total-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="cart-total-row">
+                <span>Service Fee</span>
+                <span id="cartFee">$0.00</span>
+            </div>
+            <div class="cart-total-row grand-total">
+                <span>Total</span>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+        </div>
+        
+        <div class="cart-actions">
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn" style="display: none;">Proceed to Checkout</button>
+            <div class="continue-shopping" id="continueShopping">Continue Shopping</div>
+        </div>
+    </div>
+
     <!-- Header -->
-        <header>
+    <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <!-- Logo Image -->
-                <img src="event_bridge_logo.svg" 
-                     alt="Event Bridge Logo" 
-                     class="logo-img">
-                <!-- Company Name -->
+                <!-- <div class="logo-img">EB</div> -->
+                        <a href="#" class="logo">
+            <!-- Logo Image with fallback -->
+            <img src="logoevent.PNG" 
+                 alt="Event Bridge Logo" 
+                 class="logo-img"
+                 >
                 <span class="logo-text">Event Bridge</span>
             </a>
             
@@ -37,9 +81,16 @@
             </nav>
             
             <div class="header-actions">
-                <a href="#" class="btn btn-secondary btn-small">Sign In</a>
+                <!-- Cart Icon with Count -->
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                
+                
                 <a href="#events" class="btn btn-primary btn-small">Browse Events</a>
             </div>
+            <a href="#" class="btn btn-secondary btn-small">Sign In</a>
         </div>
     </header>
 
@@ -90,16 +141,12 @@
             </div>
             
             <div class="events-grid">
-                
-                <div class="event-card" data-category="music">
+                <div class="event-card" data-category="music" data-event-id="1">
                     <div class="event-img-container">
                         <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Music Festival" class="event-img">
                         <span class="event-category music">Music</span>
-                        
-                        
                     </div>
                     
-                    <!-- Detailed info that appears on hover -->
                     <div class="event-content">
                         <span class="event-date">June 15, 2025</span>
                         <h3 class="event-title">Summer Music Festival 2025</h3>
@@ -114,21 +161,17 @@
                                 <span class="ticket-quantity">1</span>
                                 <button class="count-btn plus">+</button>
                             </div>
-                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                            <button class="btn btn-primary btn-small add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Event 2 - Updated with overlay -->
-                <div class="event-card" data-category="sports">
+                <div class="event-card" data-category="sports" data-event-id="2">
                     <div class="event-img-container">
                         <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Basketball Game" class="event-img">
                         <span class="event-category sports">Sports</span>
-                        
-                        
                     </div>
                     
-                    <!-- Detailed info that appears on hover -->
                     <div class="event-content">
                         <span class="event-date">July 22, 2025</span>
                         <h3 class="event-title">NBA Finals 2025</h3>
@@ -143,21 +186,17 @@
                                 <span class="ticket-quantity">1</span>
                                 <button class="count-btn plus">+</button>
                             </div>
-                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                            <button class="btn btn-primary btn-small add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Event 3 - Updated with overlay -->
-                <div class="event-card" data-category="conference">
+                <div class="event-card" data-category="conference" data-event-id="3">
                     <div class="event-img-container">
                         <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tech Conference" class="event-img">
                         <span class="event-category conference">Conference</span>
-                        
-                       
                     </div>
                     
-                    <!-- Detailed info that appears on hover -->
                     <div class="event-content">
                         <span class="event-date">August 10, 2025</span>
                         <h3 class="event-title">Tech Innovators Conference</h3>
@@ -172,21 +211,17 @@
                                 <span class="ticket-quantity">1</span>
                                 <button class="count-btn plus">+</button>
                             </div>
-                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                            <button class="btn btn-primary btn-small add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Event 4 - Updated with overlay -->
-                <div class="event-card" data-category="festival">
+                <div class="event-card" data-category="festival" data-event-id="4">
                     <div class="event-img-container">
                         <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Food Festival" class="event-img">
                         <span class="event-category festival">Festival</span>
-                        
-                        
                     </div>
                     
-                    <!-- Detailed info that appears on hover -->
                     <div class="event-content">
                         <span class="event-date">April 5, 2025</span>
                         <h3 class="event-title">International Food Festival</h3>
@@ -201,21 +236,17 @@
                                 <span class="ticket-quantity">1</span>
                                 <button class="count-btn plus">+</button>
                             </div>
-                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                            <button class="btn btn-primary btn-small add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Event 5 - Updated with overlay -->
-                <div class="event-card" data-category="music">
+                <div class="event-card" data-category="music" data-event-id="5">
                     <div class="event-img-container">
                         <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="DJ Night" class="event-img">
                         <span class="event-category music">Music</span>
-                        
-                       
                     </div>
                     
-                    <!-- Detailed info that appears on hover -->
                     <div class="event-content">
                         <span class="event-date">October 12, 2025</span>
                         <h3 class="event-title">Mega DJ Night Party</h3>
@@ -230,23 +261,17 @@
                                 <span class="ticket-quantity">1</span>
                                 <button class="count-btn plus">+</button>
                             </div>
-                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                            <button class="btn btn-primary btn-small add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
 
-                
-                
-                <!-- Event 6 - Updated with overlay -->
-                <div class="event-card" data-category="festival">
+                <div class="event-card" data-category="festival" data-event-id="6">
                     <div class="event-img-container">
                         <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Light Festival" class="event-img">
                         <span class="event-category festival">Festival</span>
-                        
-                        
                     </div>
                     
-                    <!-- Detailed info that appears on hover -->
                     <div class="event-content">
                         <span class="event-date">December 10, 2025</span>
                         <h3 class="event-title">Winter Light Festival</h3>
@@ -261,15 +286,12 @@
                                 <span class="ticket-quantity">1</span>
                                 <button class="count-btn plus">+</button>
                             </div>
-                            <button class="btn btn-primary btn-small">Buy Tickets</button>
+                            <button class="btn btn-primary btn-small add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-                
-                
-            
             <div style="text-align: center;">
                 <a href="#" class="btn btn-secondary">View All Events</a>
             </div>
@@ -412,7 +434,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>EventFlow</h3>
+                    <h3>Event Bridge</h3>
                     <p>Your premier destination for discovering and purchasing event tickets worldwide. Experience events like never before.</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -455,89 +477,11 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 EventFlow. All rights reserved. | <a href="#" style="color: #b0b7c3;">Privacy Policy</a> | <a href="#" style="color: #b0b7c3;">Terms of Service</a></p>
+                <p>&copy; 2025 Event Bridge. All rights reserved. | <a href="#" style="color: #b0b7c3;">Privacy Policy</a> | <a href="#" style="color: #b0b7c3;">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('active');
-        });
-
-        // Event Filtering
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                const filter = this.getAttribute('data-filter');
-                const eventCards = document.querySelectorAll('.event-card');
-                
-                eventCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Ticket Count Functionality
-        document.querySelectorAll('.count-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const parent = this.closest('.ticket-count');
-                const quantitySpan = parent.querySelector('.ticket-quantity');
-                let quantity = parseInt(quantitySpan.textContent);
-                
-                if (this.classList.contains('plus')) {
-                    quantity++;
-                } else if (this.classList.contains('minus') && quantity > 1) {
-                    quantity--;
-                }
-                
-                quantitySpan.textContent = quantity;
-            });
-        });
-
-        // Buy Tickets Button Alert
-        document.querySelectorAll('.btn-primary').forEach(button => {
-            if (button.textContent.includes('Buy Tickets')) {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const card = this.closest('.event-card');
-                    const title = card.querySelector('.event-title').textContent;
-                    const price = card.querySelector('.event-price').textContent;
-                    const quantity = card.querySelector('.ticket-quantity').textContent;
-                    
-                    alert(`Added to cart: ${quantity} ticket(s) for "${title}" at ${price} each`);
-                });
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId.startsWith('#')) {
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        // Close mobile menu if open
-                        document.querySelector('nav').classList.remove('active');
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
